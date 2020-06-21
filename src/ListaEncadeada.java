@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.Optional;
 
-public class ListaEncadeadaSimples<T> implements Lista<T> {
+public class ListaEncadeada<T> implements Lista<T> {
     @Override
     public T acessar(int indice) {
         return getNo(indice).getValor();
@@ -74,7 +74,7 @@ public class ListaEncadeadaSimples<T> implements Lista<T> {
 
     // Implementa esse cara **pelo amor de deus**, senão o iterador default é O(n^2)!!!
     private class IteradorListaEncadeadaSimples<T> implements Iterator<T> {
-        public IteradorListaEncadeadaSimples(ListaEncadeadaSimples<T> ts) {
+        public IteradorListaEncadeadaSimples(ListaEncadeada<T> ts) {
         }
     }
 }
