@@ -1,6 +1,9 @@
 import java.util.Optional;
 
 public class ListaIntegerCSV implements Lista<Integer> {
+
+    String csv = "";
+
     @Override
     public Integer acessar(int indice) {
         return getNo(indice).getValor();
@@ -8,6 +11,8 @@ public class ListaIntegerCSV implements Lista<Integer> {
 
     @Override
     public void inserir(int indice, Integer obj) {
+        if(!isVazia()) csv += ","+obj.toString();
+        else csv += obj.toString();
         if (inicio != null) {
             No<Integer> anterior = getNoAnterior(indice);
             No<Integer> inserido = new No<>(obj, anterior.getProximo().orElse(null));
@@ -27,6 +32,7 @@ public class ListaIntegerCSV implements Lista<Integer> {
 
         if (inicio == removido) inicio = null;
         qtdElems--;
+        csv = csv.substring(0, csv.length() - removido.getValor().toString().length() - 1);
         return  removido.getValor();
     }
 
@@ -47,6 +53,10 @@ public class ListaIntegerCSV implements Lista<Integer> {
     @Override
     public int qtdeElems() {
         return qtdElems;
+    }
+
+    public String getCsv(){
+        return csv;
     }
 
     private No<Integer> getNoAnterior(int indice) {
