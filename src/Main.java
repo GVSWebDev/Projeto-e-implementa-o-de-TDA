@@ -6,5 +6,7 @@ public class Main {
         p.empilhar(Integer.valueOf(20));
         p.empilhar(Integer.valueOf(11));
         p.empilhar(Integer.valueOf(48));
+
+        p.desempilhar();
     }
 }

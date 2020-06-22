@@ -52,6 +52,10 @@ public class FilaIntegerCSV implements Fila<Integer>  {
         return ultimo - primeiro == 0;
     }
 
+    public String getCsv(){
+        return CSV;
+    }
+
     private void expandirFila() {
         throw new RuntimeException("O aluno, mais uma vez, não implementou!!!");
     }

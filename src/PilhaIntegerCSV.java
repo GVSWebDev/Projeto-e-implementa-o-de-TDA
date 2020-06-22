@@ -66,6 +66,10 @@ class PilhaIntegerCSV implements Pilha<Integer> {
         return topo <= 0;
     }
 
+    public String getCsv(){
+        return csv;
+    }
+
     private void expandirPilha() {
         Integer[] pilhaNova = (Integer[]) new Object[pilha.length*2];
         for (int i = 0; i < pilha.length; i++) pilhaNova[i] = pilha[i];
