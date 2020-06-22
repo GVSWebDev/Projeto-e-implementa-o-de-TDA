@@ -1,5 +1,5 @@
 class PilhaIntegerCSV implements Pilha<Integer> {
-    private String csv;
+    private String csv = "";
     private Integer[] pilha;
     private int topo = 0;
 
@@ -18,10 +18,12 @@ class PilhaIntegerCSV implements Pilha<Integer> {
      */
     @Override
     public void empilhar(Integer obj) {
+        if(!isVazia()) csv += ","+obj.toString();
+        else csv += obj.toString();
         if (topo >= pilha.length) expandirPilha();
         pilha[topo] = obj;
         topo++;
-        csv += ","+obj.toString();
+
     }
 
     /**
@@ -33,7 +35,7 @@ class PilhaIntegerCSV implements Pilha<Integer> {
         topo--;
         Integer desempilhado = pilha[topo];
         pilha[topo] = null;
-        csv = csv.substring(0, csv.length() - desempilhado.toString().length() + 1);
+        csv = csv.substring(0, csv.length() - desempilhado.toString().length() - 1);
         return desempilhado;
     }
 
