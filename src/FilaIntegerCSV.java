@@ -4,12 +4,26 @@ import java.util.Optional;
 
 public class FilaIntegerCSV implements Fila<Integer>  {
 
+    String CSV = new String("");
+
+    @SuppressWarnings("unchecked")
+    public FilaIntegerCSV(int capacidade) {
+        fila = new Integer[capacidade];
+    }
+    public FilaIntegerCSV() {
+        this(CAPACIDADE_PADRAO);
+    }
+
     @Override
     public void enfileirar(Integer obj) {
+        if(!isVazia()) CSV += ","+obj.toString();
+        else CSV += obj.toString();
+
         fila[ultimo] = obj;
         ultimo = ultimo + 1 >= fila.length ? 0 : ultimo+1;
 
-        if (ultimo == primeiro) expandirFila();
+        if (ultimo == primeiro)
+            expandirFila();
     }
 
     @Override
