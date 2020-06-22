@@ -64,17 +64,17 @@ public class ListaEncadeada<T> implements Lista<T> {
         return  iterador;
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return new IteradorListaEncadeadaSimples<>(this);
-    }
+   // @Override
+    //public Iterator<T> iterator() {
+        //return new IteradorListaEncadeadaSimples<>(this);
+    //}
 
     private No<T> inicio = null;
     private int qtdElems = 0;
 
     // Implementa esse cara **pelo amor de deus**, senão o iterador default é O(n^2)!!!
-    private class IteradorListaEncadeadaSimples<T> implements Iterator<T> {
-        public IteradorListaEncadeadaSimples(ListaEncadeada<T> ts) {
-        }
-    }
+    //private class IteradorListaEncadeadaSimples<T> implements Iterator<T> {
+        //public IteradorListaEncadeadaSimples(ListaEncadeada<T> ts) {
+        //}
+    //}
 }
