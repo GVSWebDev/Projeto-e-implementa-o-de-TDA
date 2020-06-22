@@ -31,7 +31,7 @@ public class FilaIntegerCSV implements Fila<Integer>  {
         Integer desenfileirado = fila[primeiro];
         fila[primeiro] = null;
         primeiro = primeiro + 1 >= fila.length ? 0 : primeiro+1;
-
+        CSV = CSV.substring(0, CSV.length() - desenfileirado.toString().length() - 1);
         return desenfileirado;
     }
 

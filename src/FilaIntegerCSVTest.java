@@ -20,6 +20,6 @@ class FilaIntegerCSVTest {
         f.enfileirar(Integer.valueOf(11));
         f.enfileirar(Integer.valueOf(48));
         f.desenfileirar();
-        assertEquals("20,11,48", f.getCsv());
+        assertEquals("20,11", f.getCsv());
     }
 }
